@@ -10,8 +10,13 @@ namespace RepositoryCore.Context
 {
     public class ApplicationDbContext : DbContext
     {
-
-        public ApplicationDbContext() : base("ProductsDB")
+        static ApplicationDbContext()
+        {
+            var type = typeof(System.Data.Entity.SqlServer.SqlProviderServices);
+            if (type == null)
+                throw new Exception("Do not remove, ensures static reference to System.Data.Entity.SqlServer");
+        }
+        public ApplicationDbContext() : base("name=ProductsDB")
         {
 
         }
@@ -21,7 +26,7 @@ namespace RepositoryCore.Context
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-
+            modelBuilder.Properties<decimal>().Configure(config => config.HasPrecision(18, 2));
         }
     }
 }

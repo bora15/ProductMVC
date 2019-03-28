@@ -4,10 +4,10 @@
     ViewBag.Title = "ProductList";
 }
 
-<h2>ProductList</h2>
+<h2>Lista proizvoda</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Edit")
+    @Html.ActionLink("Dodaj", "Edit")
 </p>
 @if (Model != null)
 {<table class="table">
@@ -55,9 +55,8 @@
                     @Html.DisplayFor(modelItem => item.Price)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    @Html.ActionLink("Izmeni", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Obriši", "Delete", new { id = item.Id })
                 </td>
             </tr>
         }

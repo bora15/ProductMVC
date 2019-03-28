@@ -10,11 +10,9 @@ namespace ProductMVC.Controllers
 {
     public class HomeController : Controller
     {
-        //IProductService productService;
-
         public HomeController()
         {
-            //productService = Infrastructure.DependencyResolver.Kernel.Get<IProductService>();
+
         }
 
         public ActionResult Index()

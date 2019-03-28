@@ -41,7 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstraction\Products\IProductRepository.cs" />
+    <Compile Include="Context\ApplicationDbContext.cs" />
+    <Compile Include="Implementation\Products\ProductRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitOfWork\Abstraction\IUnitOfWork.cs" />
+    <Compile Include="UnitOfWork\Implementation\UnitOfWork.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
